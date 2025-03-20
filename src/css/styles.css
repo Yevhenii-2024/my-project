@@ -6,3 +6,103 @@
 */
 /* Common styles */
 @import url('./reset.css');
+
+.index-list {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.btn-index {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 100px;
+  font-size: 20px;
+  background-color: #2069d6;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3),
+    3px 3px 6px rgba(255, 255, 255, 0.15) inset;
+  transition: background-color 250ms ease-in-out, box-shadow 250ms ease-in-out,
+    transform 100ms ease-in-out;
+}
+
+.btn-index:hover {
+  background-color: #1a5abc;
+  box-shadow: 7px 7px 18px rgba(0, 0, 0, 0.4),
+    4px 4px 8px rgba(255, 255, 255, 0.15) inset;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.gallery-item {
+  flex-basis: calc((100% - 48px) / 3);
+}
+
+.gallery-image {
+  display: block;
+  max-width: 100%;
+  max-height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-link {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.gallery-image:hover {
+  transform: scale(1.08);
+}
+
+.sl-overlay {
+  background-color: #000000 !important;
+}
+
+.sl-next,
+.sl-prev,
+.sl-close {
+  color: #ffffff !important;
+  transition: transform 250ms;
+}
+
+.sl-next:hover,
+.sl-prev:hover,
+.sl-close:hover {
+  transform: scale(1.2);
+}
+
+.btn-back-gallery {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+  background-color: #2069d6;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3),
+    3px 3px 6px rgba(255, 255, 255, 0.15) inset;
+  transition: background-color 250ms ease-in-out, box-shadow 250ms ease-in-out,
+    transform 100ms ease-in-out;
+}
+
+.btn-back-gallery:hover {
+  background-color: #1a5abc;
+  box-shadow: 7px 7px 18px rgba(0, 0, 0, 0.4),
+    4px 4px 8px rgba(255, 255, 255, 0.15) inset;
+}
