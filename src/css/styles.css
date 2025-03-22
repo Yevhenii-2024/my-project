@@ -106,3 +106,66 @@
   box-shadow: 7px 7px 18px rgba(0, 0, 0, 0.4),
     4px 4px 8px rgba(255, 255, 255, 0.15) inset;
 }
+
+body {
+  background-color: rgb(103, 100, 100);
+}
+
+.feedback-form {
+  width: 408px;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 24px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+input {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 360px;
+  height: 40px;
+}
+
+input:hover {
+  border: 1px solid #000;
+}
+
+input::placeholder {
+  color: transparent;
+}
+
+input:focus::placeholder {
+  color: #2e2f42;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  width: 95px;
+  height: 40px;
+  background: #4e75ff;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 250ms ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background-color: #6c8cff;
+}
