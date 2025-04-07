@@ -8,13 +8,13 @@ export function createMarkup(array) {
          <li class="card">
               <a href="${largeImageURL}">
                 <img src="${webformatURL}" alt="${tags}" />
-            </a>
             <ul class="img-info">
                <li class="text"><span class="bold">Likes</span>${likes}</li>
                <li class="text"><span class="bold">Views</span>${views}</li>
                <li class="text"><span class="bold">Comments</span>${comments}</li>
                <li class="text"><span class="bold">Downloads</span>${downloads}</li>
             </ul>
+            </a>
         </li>
             `;
         }).join('');
