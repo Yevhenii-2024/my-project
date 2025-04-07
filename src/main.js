@@ -10,9 +10,11 @@ function handlerSubmit(event) {
     const searchData = this.elements['search-text'].value.trim();
     if (!searchData) {
         form.reset();
-        massageError();
+        massageError('Enter correct data, please');
         return;
     }       
+    
+    renderGallery();
     changeLoader('block');
     getRequest(searchData);
 }

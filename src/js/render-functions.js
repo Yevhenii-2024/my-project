@@ -6,17 +6,18 @@ export function createMarkup(array) {
         .map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads}) => {
             return `
          <li class="card">
-              <a href="${largeImageURL}"></a>
+              <a href="${largeImageURL}">
                 <img src="${webformatURL}" alt="${tags}" />
+            </a>
             <ul class="img-info">
-               <li class="text">Likes</li>${likes}
-               <li class="text">Views</li>${views}
-               <li class="text">Comments</li>${comments}
-               <li class="text">Downloads</li>${downloads}
+               <li class="text"><span class="bold">Likes</span>${likes}</li>
+               <li class="text"><span class="bold">Views</span>${views}</li>
+               <li class="text"><span class="bold">Comments</span>${comments}</li>
+               <li class="text"><span class="bold">Downloads</span>${downloads}</li>
             </ul>
         </li>
-            `
-        }).join("");
+            `;
+        }).join('');
     renderGallery(markUp);
 };
 
