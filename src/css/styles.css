@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 h1,
 h2,
 h3,
@@ -33,23 +39,38 @@ img {
   height: auto;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 
 .loader {
   width: 48px;
   height: 48px;
   display: none;
+  margin: 20px auto;
+  position: relative;
 }
 .loader::after,
 .loader::before {
   content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
   box-sizing: border-box;
   width: 48px;
   height: 48px;
   border-radius: 50%;
   border: 2px solid #000;
-  position: absolute;
-  left: 50%;
-  top: 50%;
   animation: animloader 2s linear infinite;
 }
 .loader::after {
@@ -67,17 +88,11 @@ img {
   }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .container {
   max-width: 1440px;
   padding: 0 156px;
   margin: 0 auto;
-  position: relative;
+  /* position: relative; */
 }
 
 .form {
@@ -152,4 +167,10 @@ button:hover {
 .card img {
   height: 156px;
   object-fit: cover;
+}
+
+[data-showMore] {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 20px;
 }

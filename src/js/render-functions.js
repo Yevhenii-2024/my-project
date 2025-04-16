@@ -1,6 +1,19 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
+export const DOM_TREE = {
+    gallery: document.querySelector('.gallery'),
+    loader: document.querySelector('.loader'),
+    showMore: document.querySelector('[data-showMore]'),
+    form: document.querySelector('.form')
+}
+
+const lightBox = new SimpleLightbox('.gallery a', {
+    navText: ['←', '→'],
+    captionsData: 'alt',
+    captionDelay: '250'
+});
+
 export function createMarkup(array) {
     const markUp = array
         .map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads}) => {
@@ -18,27 +31,26 @@ export function createMarkup(array) {
         </li>
             `;
         }).join('');
-    renderGallery(markUp);
-};
-
-export function renderGallery(string = '') {
-    const gallery = document.querySelector('.gallery');
-    gallery.innerHTML = string;
-    if (string) {
-        setLightBox();
-    }
-}
-
-function setLightBox() {
-    const lightBox = new SimpleLightbox('.gallery a', {
-  navText: ['←','→'],
-  captionsData: 'alt',
-  captionDelay: '250',
-    });
+    DOM_TREE.gallery.insertAdjacentHTML('beforeend', markUp);
     lightBox.refresh();
 }
 
-export function changeLoader(style) {
-  const loader = document.querySelector('.loader');
-  loader.style.display = style;
+export function clearGallery() {
+    DOM_TREE.gallery.innerHTML = '';
+} 
+
+export function showLoader() {
+    DOM_TREE.loader.style.display = 'block';
+}
+
+export function pickUpLoader() {
+    DOM_TREE.loader.style.display = 'none';
+}
+
+export function showMoreButton() {
+    DOM_TREE.showMore.classList.remove('visually-hidden');
+}
+
+export function pickUpShowMoreButton() {
+    DOM_TREE.showMore.classList.add('visually-hidden');
 }
